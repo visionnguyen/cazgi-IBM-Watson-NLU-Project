@@ -111,6 +111,7 @@ app.get("/text/emotion", (req,res) => {
     naturalLanguageUnderstanding.analyze(analyzeParams)
     .then(analysisResults => {
         //Retrieve the emotion and return it as a formatted string
+        //return res.send(JSON.stringify(analysisResults.result));
 
         return res.send(analysisResults.result.keywords[0].emotion,null,2);
     })
@@ -137,6 +138,7 @@ app.get("/text/sentiment", (req,res) => {
     naturalLanguageUnderstanding.analyze(analyzeParams)
     .then(analysisResults => {
         //Retrieve the sentiment and return it as a formatted string
+        //return res.send(JSON.stringify(analysisResults.result));
 
         return res.send(analysisResults.result.keywords[0].sentiment,null,2);
     })
